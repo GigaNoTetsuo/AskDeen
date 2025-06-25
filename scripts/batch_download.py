@@ -9,8 +9,8 @@ from groq import Groq
 # client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 
-client = Groq(api_key="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")
-client1 = OpenAI(api_key="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")
+client = Groq(api_key=os.getenv("GROQ_API_KEY"))
+client1 = OpenAI(api_key= os.getenv("openai_api_key"))
 
 # file_path = "/home/nebulamind/Documents/AI Lab/AskDeen/prepared_outputs/verse_tagging_batch_001.jsonl"
 # response = client1.files.create(file=open(file_path, "rb"), purpose="batch")

@@ -1,0 +1,13 @@
+# Ignore prepared_batches directory
+prepared_outputs/
+
+# Ignore temp directory
+temp/
+
+# Ignore environment variable file
+.env
+
+/sctipts/script_tag2.py
+
+/outputs/output_2.jsonl
+/outputs/output_3.json

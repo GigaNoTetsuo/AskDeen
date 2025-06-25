@@ -4,9 +4,9 @@ import pandas as pd
 from typing import Dict
 
 # Paths
-PREPARED_DIR = "./prepared_outputs"
+PREPARED_DIR = "/home/nebulamind/Documents/AI Lab/AskDeen/translation_batches_500"
 os.makedirs(PREPARED_DIR, exist_ok=True)
-BATCH_SIZE = 100
+BATCH_SIZE = 6236
 MODEL_NAME = "meta-llama/llama-4-maverick-17b-128e-instruct" 
 gpt_model = "gpt-4.1-2025-04-14"
 
@@ -119,7 +119,7 @@ def get_contextual_rows(df: pd.DataFrame, current_index: int) -> Dict:
 #--------------------------------------------------------------------------------------------------------------------
 
 # Load dataset
-df = pd.read_csv("/home/nebulamind/Documents/AI Lab/AskDeen/dataset/Surah123(2).csv")  
+df = pd.read_excel("/home/nebulamind/Documents/AI Lab/AskDeen/dataset/Translation File.xlsx")  
 
 # Output JSONL file
 total_rows = len(df)
@@ -131,7 +131,7 @@ for batch_index in range(batch_count):
     start_idx = batch_index * BATCH_SIZE
     end_idx = min(start_idx + BATCH_SIZE, total_rows)
 
-    output_filename = f"gpt_batch_{batch_index + 1:03}.jsonl"
+    output_filename = f"gpt_batch_complete_{batch_index + 1:03}.jsonl"
     output_path = os.path.join(PREPARED_DIR, output_filename)
 
     with open(output_path, "w", encoding="utf-8") as fout:
@@ -144,10 +144,10 @@ for batch_index in range(batch_count):
 
                 request = {
                     "custom_id": f"Verse: {df.iloc[idx]['ID']}",
-                    "method": "POST",
-                    "url": "/v1/chat/completions",
-                    "body": {
-                        "model": gpt_model,
+                    # "method": "POST",
+                    # "url": "/v1/chat/completions",
+                    # "body": {
+                    #     "model": gpt_model,
                         "messages": [
                             {
                                 "role": "system",
@@ -158,9 +158,9 @@ for batch_index in range(batch_count):
                                 "content": prompt
                             }
                         ],
-                        "max_tokens": 200,
-                        "temperature": 0.3
-                    }
+                        # "max_tokens": 200,
+                        # "temperature": 0.3
+                    # }
                 }
 
                 fout.write(json.dumps(request, ensure_ascii=False) + "\n")
