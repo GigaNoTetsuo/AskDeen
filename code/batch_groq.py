@@ -3,7 +3,6 @@ import requests
 import time
 from dotenv import load_dotenv
 
-load_dotenv()  
 # Replace with your Groq API key
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
