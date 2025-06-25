@@ -1,9 +1,11 @@
 import os
 import requests
 import time
+from dotenv import load_dotenv
 
+load_dotenv()  
 # Replace with your Groq API key
-GROQ_API_KEY = os.getenv("GROQ_API_KEY", "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")
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
 # Endpoint and model
 GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions"
