@@ -1,0 +1,34 @@
+# Ignore prepared_batches directory
+prepared_outputs/
+
+# Ignore temp directory
+temp/
+
+# Ignore environment variable file
+.env
+
+/sctipts/script_tag3.py
+
+
+/dataset/Translation File(1).xlsx
+/dataset/Translation File.xlsx
+/dataset/Surah123(2).csv
+
+
+/code/test_notebook.ipynb
+/code/batch_groq.py
+
+/outputs/chatgpt_text_random.json
+/outputs/complete_tags_with_scrapping.csv
+/outputs/complete_tags.csv
+/outputs/json_Surah123.json
+/outputs/test_out_last.csv
+/outputs/temp.txt
+/outputs/output_2.jsonl
+/outputs/output_3.json
+
+/Quran_batches_1000/verse_tagging_batch_prepared.jsonl
+/scripts/tag_split.py
+
+/Quran_batches_1000/test_batch.jsonl
+
